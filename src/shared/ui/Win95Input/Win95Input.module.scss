@@ -1,0 +1,51 @@
+.win95Input {
+  background: #ffffff;
+  border: 2px solid #666666;
+  border-radius: 2px;
+  color: #000000;
+  font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 13px;
+  padding: 4px 6px;
+  width: 100%;
+  max-width: 200px;
+  cursor: text;
+  transition: all 0.2s ease;
+
+  // Windows 95 style placeholder
+  &::placeholder {
+    color: #666666;
+  }
+
+  // Windows 95 style focus
+  &:focus {
+    outline: none;
+    border-color: #444444;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #888888;
+  }
+
+  // Windows 95 style disabled
+  &:disabled {
+    background: #cccccc;
+    border-color: #666666;
+    color: #666666;
+    cursor: not-allowed;
+  }
+
+  // Windows 95 style text
+  text-align: left;
+
+  // Windows 95 style sizing
+  height: 20px;
+  min-height: 20px;
+
+  // Windows 95 style password dots
+  &[type="password"] {
+    letter-spacing: 1px;
+  }
+
+  // Windows 95 style selection
+  ::selection {
+    background: #cccccc;
+    color: #000000;
+  }
+}

@@ -1,0 +1,11 @@
+.page-template {
+  min-height: 100vh;
+}
+
+.page-template__main {
+  padding-top: 0;
+
+  &--with-navigation {
+    padding-top: 60px;
+  }
+}

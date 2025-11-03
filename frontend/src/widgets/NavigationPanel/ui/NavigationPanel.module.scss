@@ -1,0 +1,62 @@
+.navigationPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #ffffff 0%, #c0c0c0 100%);
+  border-bottom: 2px solid #000000;
+  padding: 8px 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+}
+
+.rootSection {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.appTitle {
+  color: #000080;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.navigationRight {
+  display: flex;
+  gap: 16px;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  color: #000000;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #000080;
+    color: #ffffff;
+  }
+
+  &:active {
+    background-color: #000060;
+  }
+}

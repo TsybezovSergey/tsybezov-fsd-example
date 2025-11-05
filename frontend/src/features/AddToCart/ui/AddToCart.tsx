@@ -1,3 +1,5 @@
+"use client";
+
 import { useCartStore, useNotificationStore } from "../../../entities";
 import { Win95Button } from "../../../shared";
 import { IconCart, IconCartCheck } from "../../../shared/icons";

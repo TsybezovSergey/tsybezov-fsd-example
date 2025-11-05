@@ -1,7 +1,7 @@
-import { getProduct } from "../api-generated/product/product";
+import * as product from "../api-generated/product/product";
 
 const apiClient = {
-  products: getProduct(),
+  product,
 };
 
 export default apiClient;

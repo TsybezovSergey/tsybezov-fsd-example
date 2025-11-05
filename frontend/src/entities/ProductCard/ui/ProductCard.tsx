@@ -3,6 +3,7 @@ import { baseUrl, declensionMap, Product, Win95Card } from "../../../shared";
 import styles from "./ProductCard.module.scss";
 
 import classnames from "classnames/bind";
+import Image from "next/image";
 
 const cn = classnames.bind(styles);
 
@@ -32,10 +33,12 @@ export function ProductCard({
           productCardImageWrapDisabled: !product.availableQuantity,
         })}
       >
-        <img
+        <Image
           className={styles.productCardImage}
           src={baseUrl.concat(product.image)}
           alt={product.title}
+          width={300}
+          height={400}
         />
       </div>
 

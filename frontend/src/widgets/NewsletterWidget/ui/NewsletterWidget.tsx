@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { Win95Input } from "../../../shared/ui/Win95Input/Win95Input";
 import { Win95Button } from "../../../shared/ui/Win95Button/Win95Button";

@@ -1,4 +1,5 @@
-import { useState } from "react";
+"use client";
+
 import { Win95Button } from "../../../shared";
 import { IconCartCheck } from "../../../shared/icons";
 import { Cart, useCartStore } from "../../../entities";
@@ -15,7 +16,7 @@ export function CartWidget() {
   const cartStore = useCartStore();
   const { data } = useQuery({
     queryKey: ["products"],
-    queryFn: () => apiClient.products.productControllerFindAll({}),
+    queryFn: () => apiClient.product.productControllerFindAll({}),
   });
 
   const items = data?.data.data

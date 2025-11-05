@@ -1,7 +1,11 @@
 import { defineConfig } from "orval";
-import { loadEnv } from "vite";
 
-const env = loadEnv("", process.cwd(), "");
+import dotenv from "dotenv";
+
+dotenv.config();
+const baseUrl = process.env.NEXT_API_BASE ?? "";
+
+console.log("API Base URL:", baseUrl);
 
 export default defineConfig({
   api: {
@@ -9,12 +13,12 @@ export default defineConfig({
       mode: "tags-split",
       target: "../src/shared/api-generated/index.ts",
       schemas: "../src/shared/api-generated/model",
-      client: "axios",
-      baseUrl: env.VITE_API_BASE,
+      client: "fetch",
+      baseUrl,
       prettier: true,
     },
     input: {
-      target: env.VITE_API_BASE.concat("/api-json"),
+      target: baseUrl.concat("/api-json"),
     },
   },
 });

@@ -1,4 +1,5 @@
-import { baseUrl, Win95Button, Win95Card } from "../../../shared";
+import { basePublicApi } from "@/src/shared/index.const";
+import { Win95Button, Win95Card } from "../../../shared";
 
 import styles from "./Cart.module.scss";
 
@@ -48,7 +49,7 @@ export function Cart({
                   <span className={styles.cartItemTitle}>{title}</span>
                   <img
                     className={styles.cartItemImage}
-                    src={baseUrl.concat(image)}
+                    src={basePublicApi.concat(image)}
                     alt={title}
                   />
                 </div>

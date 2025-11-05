@@ -1,3 +1,5 @@
+"use client";
+
 import { Win95Button } from "../../../shared";
 import { IconLikeFill } from "../../../shared/icons";
 import { IconLike } from "../../../shared/icons/Like/Like";

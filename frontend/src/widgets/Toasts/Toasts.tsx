@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { Win95Toast } from "../../shared/ui/Win95Toast/Win95Toast";
 import { useNotificationStore } from "../../entities/Notification/model/notificationStore";

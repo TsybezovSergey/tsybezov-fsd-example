@@ -4,3 +4,4 @@ export { Win95Error } from "./Win95Error/Win95Error";
 export { Win95Input } from "./Win95Input/Win95Input";
 export { Win95Label } from "./Win95Label/Win95Label";
 export { Win95Toast } from "./Win95Toast/Win95Toast";
+export { Win95Calendar } from "./Win95Calendar/Win95Calendar";

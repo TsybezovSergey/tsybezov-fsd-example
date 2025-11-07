@@ -10,7 +10,7 @@ import type {
   CreateProductDto,
   Product,
   ProductControllerFindAllParams,
-} from "../model";
+} from ".././model";
 
 export type productControllerFindAllResponse200 = {
   data: AllProducts;

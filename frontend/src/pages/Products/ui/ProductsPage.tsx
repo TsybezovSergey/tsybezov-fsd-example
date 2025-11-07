@@ -1,7 +1,7 @@
-import apiClient from "../../../shared/api";
-
+import { FullProductCard } from "@/src/widgets";
+import apiClient from "@/src/shared/api";
+import { Win95Calendar } from "@/src/shared";
 import styles from "./ProductsPage.module.scss";
-import { FullProductCard } from "../../../widgets/FullProductCard/ui/FullProductCard";
 
 export default async function ProductsPage() {
   const res = await apiClient.product.productControllerFindAll();
@@ -11,6 +11,7 @@ export default async function ProductsPage() {
       {res.data?.data?.map((product) => (
         <FullProductCard key={product.id} product={product} />
       ))}
+      <Win95Calendar />
     </div>
   );
 }

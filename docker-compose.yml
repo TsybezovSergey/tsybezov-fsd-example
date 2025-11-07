@@ -1,67 +1,25 @@
 version: "3.9"
 
 services:
-  # Docker-in-Docker для сборки образов
-  dind:
-    image: docker:27-dind
-    privileged: true
-    environment:
-      - DOCKER_TLS_CERTDIR=
-    networks:
-      - dindnet
-    platform: linux/arm64
-    command: dockerd --host=tcp://0.0.0.0:2375 --host=unix:///var/run/docker.sock
-
-  # Контейнер для сборки и запуска приложения
-  builder:
-    image: docker:27-cli
-    depends_on:
-      - dind
-      - postgres
-    environment:
-      - DOCKER_HOST=tcp://dind:2375
-      - DOCKER_TLS_CERTDIR=
-      - POSTGRES_HOST=postgres
-      - POSTGRES_USER=dev
-      - POSTGRES_PASSWORD=dev
-      - POSTGRES_DB=dev
-    volumes:
-      - .:/workspace
-    working_dir: /workspace
-    networks:
-      - dindnet
-    platform: linux/arm64
-    command: >
-      sh -c "
-        echo '📦 Installing PostgreSQL client...';
-        apk update && apk add --no-cache postgresql-client > /dev/null;
-        echo '⏳ Waiting for PostgreSQL...';
-        until pg_isready -h postgres -p 5432 -U dev; do sleep 2; done;
-        echo '✅ PostgreSQL is up!';
-        docker version &&
-        docker build -t myimage . &&
-        echo '🏁 Build complete.';
-      "
-
-  # PostgreSQL
   postgres:
     image: postgres:16-alpine
+    container_name: postgres
     environment:
-      - POSTGRES_USER=dev
-      - POSTGRES_PASSWORD=dev
-      - POSTGRES_DB=dev
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+      POSTGRES_DB: dev
     ports:
-      - "5432:5432"
-    networks:
-      - dindnet
+      - "5432:5432" 
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data 
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     platform: linux/arm64
 
-volumes:
-  dind-certs:
-  pgdata:
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
 
-networks:
-  dindnet:
+volumes:
+  pgdata:

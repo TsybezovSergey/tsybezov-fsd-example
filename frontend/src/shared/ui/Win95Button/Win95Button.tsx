@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Win95Button.module.scss";
 
-interface Win95ButtonProps {
+type Win95ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
-}
+};
 
 export const Win95Button: React.FC<Win95ButtonProps> = ({
   children,

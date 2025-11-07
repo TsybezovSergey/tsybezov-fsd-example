@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Win95Label.module.scss";
 
-interface Win95LabelProps {
+type Win95LabelProps = {
   children: React.ReactNode;
   htmlFor?: string;
   className?: string;
   required?: boolean;
-}
+};
 
 export const Win95Label: React.FC<Win95LabelProps> = ({
   children,

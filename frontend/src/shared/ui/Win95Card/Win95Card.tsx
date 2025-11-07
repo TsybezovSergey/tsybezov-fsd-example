@@ -6,20 +6,19 @@ import { MouseEvent } from "react";
 
 const cn = classnames.bind(styles);
 
-interface Win95CardProps
-  extends WithClassName<{
-    title: string;
+type Win95CardProps = WithClassName<{
+  title: string;
+  description?: string;
+  onClose?: () => void;
+  onClick?: (e: MouseEvent<HTMLDivElement>) => void;
+  footer?: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+  classNames?: {
     description?: string;
-    onClose?: () => void;
-    onClick?: (e: MouseEvent<HTMLDivElement>) => void;
-    footer?: React.ReactNode;
-    children?: React.ReactNode;
-    className?: string;
-    classNames?: {
-      description?: string;
-      modal?: string;
-    };
-  }> {}
+    modal?: string;
+  };
+}>;
 
 export const Win95Card: React.FC<Win95CardProps> = ({
   title,

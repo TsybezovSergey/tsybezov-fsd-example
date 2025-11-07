@@ -3,17 +3,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Win95Toast.module.scss";
 
-interface ToastMessage {
+type ToastMessage = {
   id: string;
   message: string;
   type: "success" | "error" | "info" | "warning";
   duration?: number;
-}
+};
 
-interface Win95ToastProps {
+type Win95ToastProps = {
   message: ToastMessage;
   onClose: (id: string) => void;
-}
+};
 
 export const Win95Toast: React.FC<Win95ToastProps> = ({ message, onClose }) => {
   const [isVisible, setIsVisible] = useState(true);

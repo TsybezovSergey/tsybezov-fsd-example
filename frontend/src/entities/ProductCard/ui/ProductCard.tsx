@@ -33,12 +33,10 @@ export function ProductCard({
           productCardImageWrapDisabled: !product.availableQuantity,
         })}
       >
-        <Image
+        <img
           className={styles.productCardImage}
           src={baseUrl.concat(product.image)}
           alt={product.title}
-          width={300}
-          height={400}
         />
       </div>
 

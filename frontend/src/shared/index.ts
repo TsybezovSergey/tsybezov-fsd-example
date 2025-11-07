@@ -1,3 +1,5 @@
+import dynamic from "next/dynamic";
+
 export { ROUTES } from "./routes/routes";
 export {
   Win95Button,
@@ -6,6 +8,7 @@ export {
   Win95Input,
   Win95Label,
   Win95Toast,
+  Win95Calendar,
 } from "./ui";
 
 export { declensionMap } from "./utils/declensionMap";
@@ -13,3 +16,5 @@ export { declensionMap } from "./utils/declensionMap";
 export * from "./api-generated/model";
 
 export { baseUrl } from "./index.const";
+
+export * from "./lib/";

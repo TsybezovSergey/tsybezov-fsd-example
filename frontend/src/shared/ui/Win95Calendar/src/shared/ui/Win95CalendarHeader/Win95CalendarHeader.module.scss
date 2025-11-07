@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #000080 0%, #0000a0 100%);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-bottom: 1px solid #000000;
+}
+
+.headerButton {
+  cursor: pointer;
+
+  background: #c0c0c0;
+  border: 2px outset #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  color: #000000;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:active {
+    border: 2px inset #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+  }
+
+  &:hover {
+    background: #d0d0d0;
+  }
+}
